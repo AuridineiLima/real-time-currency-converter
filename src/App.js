@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import {
+  getDollarRate,
+  getEuroRate,
+} from "./services/exchangeRateService";
+import CurrencyConverter from "./components/CurrencyConverter";
+import "./App.css";
 
 function App() {
+  const [dollarRate, setDollarRate] = useState(null);
+  const [euroRate, setEuroRate] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchRates() {
+      try {
+        const usd = await getDollarRate();
+        const eur = await getEuroRate();
+
+        setDollarRate(usd);
+        setEuroRate(eur);
+      } catch (err) {
+        setError("Erro ao carregar cotação");
+      }
+    }
+
+    fetchRates();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="converter-container">
+      <h1 className="converter-title">Conversor de Moedas</h1>
+
+      {error && <p className="error-text">{error}</p>}
+
+      {!error && dollarRate && euroRate && (
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Cotação atual:
+          <br />
+          <strong>1 USD = R$ {dollarRate}</strong>
+          <br />
+          <strong>1 EUR = R$ {euroRate}</strong>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      )}
+
+      <CurrencyConverter
+        dollarRate={dollarRate}
+        euroRate={euroRate}
+      />
     </div>
   );
 }
