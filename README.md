@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# 💱 Currency Converter React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação web de conversão de moedas desenvolvida em **React**, que consome uma **API externa de câmbio em tempo real** para converter valores de **USD e EUR para BRL**, respeitando precisão financeira e boas práticas de arquitetura.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Funcionalidades
 
-### `npm start`
+- Conversão de **Dólar (USD)** e **Euro (EUR)** para **Real Brasileiro (BRL)**
+- Cotação atualizada em tempo real via API pública
+- Cálculo com precisão decimal (centavos preservados)
+- Arredondamento aplicado apenas na exibição (padrão financeiro)
+- Interface simples, centralizada e responsiva
+- Botão para limpar valores e reiniciar a conversão
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 Conceitos aplicados
 
-### `npm test`
+- Separação de responsabilidades
+- Consumo de API externa com `fetch`
+- Gerenciamento de estado com React Hooks (`useState`, `useEffect`)
+- Componentização
+- Boas práticas de lógica financeira
+- Formatação monetária com `toLocaleString`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tecnologias utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**
+- **JavaScript (ES6+)**
+- **CSS**
+- **AwesomeAPI (Exchange Rates)**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🌐 API utilizada
 
-### `npm run eject`
+Os dados de câmbio são obtidos através da API pública:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- USD → BRL  
+  `https://economia.awesomeapi.com.br/json/last/USD-BRL`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- EUR → BRL  
+  `https://economia.awesomeapi.com.br/json/last/EUR-BRL`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ▶️ Como executar o projeto localmente
 
-## Learn More
+# Clone o repositório
+git clone https://github.com/seu-usuario/currency-converter-react.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Acesse a pasta do projeto
+cd currency-converter-react
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Instale as dependências
+npm install
 
-### Code Splitting
+# Inicie o projeto
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🤝 Créditos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Dados de câmbio fornecidos por **AwesomeAPI**  
+  https://economia.awesomeapi.com.br/
 
-### Making a Progressive Web App
+- Projeto idealizado, desenvolvido e mantido por **Auridinei**  
+  Aplicação criada com foco em boas práticas, precisão financeira e uso como portfólio profissional.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Apoio conceitual e revisão técnica durante o desenvolvimento.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
